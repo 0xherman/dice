@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Roll the Dice</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/stylesheet.css" rel="stylesheet">
+  <link href="css/dice.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.6/web3.min.js"
+    integrity="sha512-jMEcX0Bev3VsCrACqEM3BFZvAMFXJSuTsMu0SttkAdMjquip6p3Oty5bbXrfg4T8n4g5BQYkGKxzLsrSqQgLUQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="bg-img"></div>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">0xherman</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a href="#" id="address"></a>
+    </nav>
+    <button id="connectBtn" class="btn btn-outline-primary" href="#">Connect Wallet</button>
+  </div>
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center text-white">
+    <h1 class="display-4">Dice Roll</h1>
+    <p class="lead">Roll the dice and get it right for <b><span id="multiplier">X</span>x</b> your money! Better odds than the rugs you always ape.</p>
+    <p id="address"></p>
+  </div>
+  
+
+  <div class="container">
+    <div class="card-deck mb-3">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Roll the dice</h4>
+        </div>
+        <div class="card-body">
+          
+          <div id="load-form">
+            <label class="my-1 mr-2" for="guess">Your Guess</label>
+            <input id="guess" type="number" class="form-control" placeholder="Bid amount" min="1" max="6" value="1" step="1">
+            <br />
+
+            <label for="bid">Your Bid</label>
+            <input id="bid" type="number" class="form-control" placeholder="Bid amount" min="0">
+            <br />
+
+
+            <button id="rollBtn" type="submit" class="btn btn-danger btn-block" disabled>ROLL</button>
+            <br />
+            
+            <div id="claimWinnings" class="text-center" style="display:none;">
+              <h2>You won! Claim your winnings of <span id="winningValue"></span> BNB</h2>
+              <button id="claimBtn" type="submit" class="btn btn-success btn-block">CLAIM</button>
+            </div>
+            
+            <p class="text-muted text-center">Roll can take a while depending on blockchain load and input gas.</p>
+
+            <div class="cup">
+              <div id="cube" class="show1">
+                <div class="top"></div>
+                <div class="front"></div>
+                <div class="left"></div>
+                <div class="back"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+              </div>
+            <div>
+
+            <input type="hidden" id="claimId"  class="form-control" placeholder="Claim winnings">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="js/abi.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
